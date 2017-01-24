@@ -8,3 +8,4 @@ var count = $(".new-tweet").find("textarea").val().length
     }
 })
 });
+ 
