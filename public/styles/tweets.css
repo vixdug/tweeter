@@ -2,26 +2,36 @@
   background: white;
   border-radius: 8px;
   border: solid 1px;
-  height: 205px;
   margin-left: 35px;
   margin-right: 35px;
   margin-top: 30px;
   opacity: 0.5;
+
 }
+
 
 .tweet:hover {
   opacity: 1.0;
 }
 
-#icons {
+.tweet:hover .icons {
+  opacity: 1;
+}
+
+.icons {
   float: right;
   padding-right: 10px;
   padding-top: 4px;
 }
 
-#icons i {
+.icons {
   color: teal;
+  opacity: 0;
+  z-index: 1;
+
 }
+
+
 
 .tweet header {
   background: lightgrey;
@@ -42,6 +52,7 @@
 
 .tweet footer {
   border-top: solid 1px;
+  height: 40px;
 }
 
 .tweet h3 {
@@ -55,17 +66,21 @@
 .tweet span.date {
   font-size: 80%;
   padding-left: 10px;
+  display: inline-block;
+  padding-top: 10px;
 }
 
 .tweet p {
   padding-left: 15px;
   padding-top: 15px;
   padding-bottom: 5px;
+
 }
 
 .tweet h2 {
-  float: left;
+display: inline-block;
   padding-left: 10px;
+font-size: 20px
 }
 
 .tweet body {
