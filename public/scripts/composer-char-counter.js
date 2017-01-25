@@ -7,7 +7,6 @@ var count = $(".new-tweet").find("textarea").val().length
       countdown.css({"color":"red"})
     } else {
       countdown.css({"color":"black"})
-
     }
 
 })

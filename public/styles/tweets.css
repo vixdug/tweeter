@@ -1,69 +1,73 @@
-#tweets {
+.tweet {
   background: white;
-border-radius: 8px;
-border: solid 1px;
-height: 205px;
-margin-left: 35px;
-    margin-right: 35px;
-    margin-top: 30px;
-      opacity: 0.5;
+  border-radius: 8px;
+  border: solid 1px;
+  height: 205px;
+  margin-left: 35px;
+  margin-right: 35px;
+  margin-top: 30px;
+  opacity: 0.5;
 }
 
-#tweets:hover {
-opacity: 1.0;
+.tweet:hover {
+  opacity: 1.0;
 }
 
 #icons {
   float: right;
   padding-right: 10px;
-padding-top: 4px;
+  padding-top: 4px;
 }
 
 #icons i {
   color: teal;
 }
 
-#tweets header {
+.tweet header {
   background: lightgrey;
-border-radius: 5px;
-    height: 90px;
-    font-family: 'Roboto',sans-serif;
-    font-weight: 500; 
+  border-radius: 5px;
+  height: 90px;
+  font-family: 'Roboto',sans-serif;
+  font-weight: 500;
 }
 
 
-#tweets img {
+.tweet img {
   width: 80px;
-border-radius: 9px;
-padding-left: 7px;
-padding-top: 7px;
-float: left;
+  border-radius: 9px;
+  padding-left: 7px;
+  padding-top: 7px;
+  float: left;
 }
 
-#tweets footer {
+.tweet footer {
   border-top: solid 1px;
-      margin-top: 30px;
 }
 
-#tweets h3 {
+.tweet h3 {
   float: right;
   font-size: 90%;
   font-family: 'Roboto',sans-serif;
   font-weight: 400;
+  padding-right: 5px;
 }
 
-#tweets span.date {
+.tweet span.date {
   font-size: 80%;
   padding-left: 10px;
 }
 
-#tweets p {
-padding-left: 15px;
-padding-top: 15px;
-padding-bottom: 5px;
+.tweet p {
+  padding-left: 15px;
+  padding-top: 15px;
+  padding-bottom: 5px;
 }
 
-#tweets h2 {
+.tweet h2 {
   float: left;
   padding-left: 10px;
+}
+
+.tweet body {
+
 }
