@@ -23,6 +23,7 @@
       <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script type="text/javascript" src="/scripts/validation.js"></script>
 
   </head>
 
@@ -32,7 +33,15 @@
     <nav id="nav-bar">
       <img class="logo" src="/images/bird.png" >
       <span class="header">Tweeter</span>
+      <button class="compose" type"button">Compose
+      <i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
     </nav>
+
+    <script>
+    $("button").click(function(){
+      $(".new-tweet").hide().slideDown("slow");
+      })
+      </script>
 
     <!-- Page-specific (main) content here -->
     <main class="container">
@@ -42,7 +51,7 @@
 
   <section class="new-tweet">
   <h2>Compose Tweet</h2>
-  <form action= "/tweets/" id="tweet-form" method="POST" >
+  <form action= "/tweets/" id="tweet-form" onsubmit="return validateForm()" method="POST" >
     <textarea name="text" placeholder="What are you humming about?"></textarea>
     <input type="submit" value="Tweet">
     <span class="counter">140</span>

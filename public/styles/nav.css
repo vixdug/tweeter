@@ -26,3 +26,26 @@ z-index: 1;
   width: 80px;
   filter: invert(100%);
 }
+
+#nav-bar button {
+  background: white;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-top: 15px;
+    padding-right: 15px;
+    border-radius: 6px;
+    display: right;
+    display: flex;
+    float: right;
+    margin-top: 10px;
+    opacity: 0.75;
+}
+
+#nav-bar button:hover {
+  opacity: 1.0;
+}
+
+#nav-bar i {
+  padding-left: 10px;
+  padding-top: 2px;
+}

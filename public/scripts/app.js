@@ -106,6 +106,10 @@ function loadTweets(){
     })
   }
 
+$("button").click(function(){
+  $("#new-tweet").slideToggle("slow");
+  })
+
 
 // end of document ready
 });

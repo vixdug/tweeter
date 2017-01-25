@@ -8,6 +8,5 @@ var count = $(".new-tweet").find("textarea").val().length
     } else {
       countdown.css({"color":"black"})
     }
-
-})
+  })
 });
