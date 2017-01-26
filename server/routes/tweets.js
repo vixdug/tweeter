@@ -15,7 +15,7 @@ module.exports = function(DataHelpers) {
         res.json(tweets);
       }
     });
-  }); 
+  });
 
   tweetsRoutes.post("/", function(req, res) {
     if (!req.body.text) {
