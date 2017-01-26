@@ -30,6 +30,8 @@ body {
   margin: 0 auto;
   background: white;
   margin-top: 80px;
+  /*height: 100vh;*/
+  overflow: auto;
 }
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions

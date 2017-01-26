@@ -62,7 +62,7 @@ $(function(){
   }
   // renderTweets(data);
 
-
+  loadTweets()
 
 
 function createTweetElement(tweet) {
@@ -91,6 +91,7 @@ function createTweetElement(tweet) {
       success: function(result){
       $('textarea').val('')
       loadTweets()
+      $('.counter').text('140')
       }
     })
   });
@@ -106,9 +107,7 @@ function loadTweets(){
     })
   }
 
-$("button").click(function(){
-  $("#new-tweet").slideToggle("slow");
-  })
+
 
 
 // end of document ready
