@@ -7,5 +7,6 @@ function validateForm() {
     }
     if (x.length > 140) {
       alert("Oh no you didn't. Tweet can only be 140 characters")
+      return false;
     }
 }
