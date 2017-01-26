@@ -3,7 +3,7 @@ require('dotenv').config();
 
 // Basic express setup:
 
-const PORT          = 3000;
+const PORT          = 5000;
 const express       = require("express");
 const bodyParser    = require("body-parser");
 const app           = express();
