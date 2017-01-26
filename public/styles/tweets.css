@@ -6,29 +6,22 @@
   margin-right: 35px;
   margin-top: 30px;
   opacity: 0.5;
-
 }
 
-
-.tweet:hover {
+.tweet:hover i{
   opacity: 1.0;
 }
 
-.tweet:hover .icons {
-  opacity: 1;
+.tweet:hover, i{
+  opacity: 1.0;
 }
 
-.icons {
+.tweet i {
+  color: teal;
   float: right;
   padding-right: 10px;
-  padding-top: 4px;
-}
-
-.icons {
-  color: teal;
+  padding-top: 9px;
   opacity: 0;
-  z-index: 1;
-
 }
 
 
@@ -85,4 +78,11 @@ font-size: 20px
 
 .tweet body {
 
+}
+
+@media only screen and (min-device-width : 375px) and (max-device-width : 667px) {
+  .tweet {
+  margin-left: 5px;
+  margin-right: 5px;
+}
 }

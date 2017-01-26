@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
     <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
-
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
 
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
@@ -24,6 +24,10 @@
     <script type="text/javascript" src="/scripts/app.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script type="text/javascript" src="/scripts/validation.js"></script>
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
 
   </head>
 
@@ -35,10 +39,38 @@
       <span class="header">Tweeter</span>
       <button class="compose" type"button">Compose
       <i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+      <button class="login-btn" type"button">Login</button>
+      <button class="register" type"button">register</button>
+
+          <!-- login form popup -->
+<section class="login-form">
+      <form class= "popupForm" action="/login" method="POST">
+        <label for="email">EMAIL</label>
+        <input id="name" name="email" type="email">
+                 </div>
+            </div>
+            <div class="row">
+
+        <label for="password">PASSWORD</label>
+         <input id="password" name="password"  type="password">
+     </div>
+            </div>
+      <div class="row">
+           <button type="submit">login</button>
+         </form>
+       </section>
+
     </nav>
+<!-- functions that toggle display  -->
+    <script>
+    $(".login-btn").click(function(){
+      $(".login-form").slideToggle("slow")
+      console.log("i worked");
+    });
+      </script>
 
     <script>
-    $("button").click(function(){
+    $(".compose").click(function(){
       $(".new-tweet").hide().slideDown("slow")
       $("textarea").focus();
       })
@@ -81,7 +113,3 @@
 </section> -->
 
     </main>
-
-
-  </body>
-</html>

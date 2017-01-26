@@ -30,9 +30,18 @@ body {
   margin: 0 auto;
   background: white;
   margin-top: 80px;
-  /*height: 100vh;*/
   overflow: auto;
 }
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+ .login-form {
+   display: none; 
+ }
+
+ @media only screen and (min-device-width : 375px) and (max-device-width : 667px) {
+  .container {
+    width: 100%;
+    }
+ }

@@ -51,7 +51,11 @@ function createTweetElement(tweet) {
   $tweet.append($body)
   var $date = $('<span class="date">').text(newdate)
   var $icons = $('.icons')
-  var $footer = $('<footer>').append($date, $icons)
+  var $icons1 = $('<i class="fa fa-retweet" aria-hidden="true"></i>')
+  var $icons2 = $('<i class="fa fa-heart" aria-hidden="true"></i>')
+  var $icons3 = $('<i class="fa fa-flag" aria-hidden="true"></i>')
+
+  var $footer = $('<footer>').append($date, $icons, $icons1, $icons2, $icons3)
   $tweet.append($footer)
   return $tweet;
 }
@@ -70,6 +74,18 @@ function createTweetElement(tweet) {
     })
   });
 
+
+  $('.popupForm').on('submit', function (event) {
+    event.preventDefault();
+    $.ajax ({
+      url: "/login",
+      method: 'post',
+      data: $(this).serialize(),
+      success: function(result){
+      $('textarea').val('')
+    }
+  });
+})
 
 function loadTweets(){
     $.ajax({

@@ -19,7 +19,6 @@ z-index: 1;
   margin-left: 10px;
   color: white;
   font-family: 'Roboto Condensed', sans-serif;
-
 }
 
 #nav-bar img.logo {
@@ -49,3 +48,19 @@ z-index: 1;
   padding-left: 10px;
   padding-top: 2px;
 }
+
+@media only screen and (min-device-width : 375px) and (max-device-width : 667px) {
+  #nav-bar img.logo {
+    width: 60px;
+    padding-top: 15px;
+  }
+  #nav-bar .header {
+    padding-top: 5px;
+  }
+}
+
+  .login-form {
+    display: inherit;
+    text-align: right;
+    display: none; 
+  }
