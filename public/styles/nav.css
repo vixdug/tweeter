@@ -62,5 +62,11 @@ z-index: 1;
   .login-form {
     display: inherit;
     text-align: right;
-    display: none; 
+    display: none;
+  }
+
+  .registration-form {
+    display: inherit;
+    text-align: right;
+    display: none;
   }

@@ -40,7 +40,7 @@
       <button class="compose" type"button">Compose
       <i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
       <button class="login-btn" type"button">Login</button>
-      <button class="register" type"button">register</button>
+      <button class="register-btn" type"button">register</button>
 
           <!-- login form popup -->
 <section class="login-form">
@@ -60,14 +60,39 @@
          </form>
        </section>
 
+       <!-- registration form begins  -->
+
+       <section class="registration-form">
+             <form class= "regForm" action="/register" method="POST">
+               <label for="email">EMAIL</label>
+               <input id="regName" name="email" type="email">
+                        </div>
+                   </div>
+                   <div class="row">
+               <label for="password">PASSWORD</label>
+                <input id="regPassword" name="password"  type="password">
+            </div>
+                   </div>
+             <div class="row">
+                  <button type="submit">register</button>
+                </form>
+              </section>
+
+
     </nav>
 <!-- functions that toggle display  -->
     <script>
-    $(".login-btn").click(function(){
-      $(".login-form").slideToggle("slow")
-      console.log("i worked");
+    $(".register-btn").click(function(){
+      $(".registration-form").slideToggle("slow")
     });
       </script>
+
+      <script>
+      $(".login-btn").click(function(){
+        $(".login-form").slideToggle("slow")
+        console.log("i worked");
+      });
+        </script>
 
     <script>
     $(".compose").click(function(){

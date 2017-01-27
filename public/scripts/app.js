@@ -81,10 +81,28 @@ function createTweetElement(tweet) {
       method: 'post',
       data: $(this).serialize(),
       success: function(result){
-      $('textarea').val('')
+        console.log("sucessful AJAX POST")
+      $('#name').val('')
+      $('#password').val('')
+
     }
   });
 })
+
+$('.regForm').on('submit', function (event) {
+  event.preventDefault();
+  $.ajax ({
+    url: "/register",
+    method: 'post',
+    data: $(this).serialize(),
+    success: function(result){
+    $('#regName').val('')
+    $('#regPassword').val('')
+  }
+});
+})
+
+
 
 function loadTweets(){
     $.ajax({
@@ -96,6 +114,7 @@ function loadTweets(){
     })
   }
 
+var users = {};
 
 
 
