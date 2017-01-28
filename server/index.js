@@ -26,19 +26,11 @@ app.use(express.static("public"));
 app.use(cookieSession({
   keys: ['Lighthouse Labs'],
 }));
-// The in-memory database of tweets. It's a basic object with an array in it.
 
-// The `data-helpers` module provides an interface to the database of tweets.
-// This simple interface layer has a big benefit: we could switch out the
-// actual database it uses and see little to no changes elsewhere in the code
-// (hint hint).
-//
-// Because it exports a function that expects the `db` as a parameter, we can
-// require it and pass the `db` parameter immediately:
+
 const DataHelpers = require("./lib/data-helpers.js")(db);
 
-// The `tweets-routes` module works similarly: we pass it the `DataHelpers` object
-// so it can define routes that use it to interact with the data layer.
+// The `tweets-routes` can define routes that use it to interact with the data layer.
 const tweetsRoutes = require("./routes/tweets")(DataHelpers);
 
 // Mount the tweets routes at the "/tweets" path prefix:
@@ -50,7 +42,6 @@ function emailIsTaken(email) {
   let taken = false ;
   for (let id in users) {
     if (users[id].email == email) {
-      console.log("hello" + users[id]);
       taken = true;
     }
   }
@@ -58,75 +49,106 @@ return taken;
 }
 // empty array for users
 
-var users = {};
 
-function generateRandomString() {
- var result = Math.random().toString(36).substr(2, 6);
- return result;
-}
+// function generateRandomString() {
+//  var result = Math.random().toString(36).substr(2, 6);
+//  return result;
+// }
 
 // authentication function
-function authenticate(email, password) {
-  for (let user_id in users) {
-    let user = users[user_id];
-    console.log("i am in the function",user);
-    if (email === user.email) {
-  if (bcrypt.compare(password === user.password)) {
-    return user_id;
-} else {
-  return null;
-   }
-  }
-}
-  return null;
-}
+// function authenticate(email, password) {
+//   for (let user_id in users) {
+//     let user = users[user_id];
+//     if (email === user.email) {
+//   if (bcrypt.compare(password === user.password)) {
+//     return user_id;
+// } else {
+//   return null;
+//    }
+//   }
+// }
+//   return null;
+// }
 //end of function
 
 
+//log in POST
 app.post("/login/", (req, res) => {
 let email = req.body["email"];
-let password = req.body["password"];
-console.log("is it working" + email);
-let user_id = authenticate(email,password);
-if (user_id) {
-  req.session.user_id = user_id;
-  res.end();
-  console.log("user is logged in");
-} else {
-  window.alert("Email or password can not be found ")
-  res.send(403, "<html><body>Wrong email or password</body></html>\n")
+let password = bcrypt.hashSync(req.body.password, 10);
+const searchUser = {
+  "email": email
 }
-});
-
-app.get("/login/", (req, res) => {
-let email = req.body["email"];
-let password = req.body["password"];
-res.end();
+console.log(searchUser);
+  DataHelpers.getUsers(searchUser,(err, email, id) => {
+    console.log(email);
+    console.log(id);
+      if (err) {
+        res.status(500).json({ error: err.message });
+      } else {
+          if (email === req.body['email']) {
+          req.session.username = id;
+          res.status(201).send();
+          res.end();
+          console.log("user is logged in");
+        } else {
+          res.status(400).json({ error: err.message });
+        }
+      }
+    })
+  res.end();
 })
 
+
+
+//logout POST
+
+app.post("/logout", (req, res) => {
+req.session = null;
+res.end();
+console.log("logged out");
+
+});
+
+app.get("/logout", (req, res) => {
+  res.status(200)
+  res.end();
+
+})
+
+app.get("/login/", (req, res) => {
+  let email = req.body["email"];
+  let password = req.body["password"];
+  res.end();
+
+});
+
+
 app.post("/register", (req, res) => {
-let email = req.body.email;
-let password = bcrypt.hashSync(req.body.password, 10);
+  let email = req.body.email;
+  let password = bcrypt.hashSync(req.body.password, 10);
   if (!email || !password) {
     res.status(400);
     res.send("no email");
     return;
-}
-  if (emailIsTaken(email)) {
-  res.status(400);
-  res.send("email is taken");
-  return;
-}
-const id = generateRandomString();
-users[id] = {
-id,
-email,
-password
-};
-req.session.username = email;
-console.log(email);
-console.log(users);
-res.end();
+  }
+
+  const user = {
+    email,
+    password
+  };
+  DataHelpers.saveUser(user, (err, userId) => {
+    console.log("the real user id is", userId);
+    if (err){
+      res.status(500).json({ error: err.message });
+      res.end();
+    } else {
+      req.session.username = userId
+      res.status(201).send();
+      res.end();
+  }
+});
+
 });
 
 app.listen(PORT, () => {

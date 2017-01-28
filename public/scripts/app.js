@@ -84,10 +84,24 @@ function createTweetElement(tweet) {
         console.log("sucessful AJAX POST")
       $('#name').val('')
       $('#password').val('')
-
     }
   });
 })
+
+
+
+  $('.logoutForm').on('submit', function (event) {
+    event.preventDefault();
+    $.ajax ({
+      url: "/logout",
+      method: 'post',
+      success: function(result){
+        console.log("sucessful LOGOUT through ajax")
+    }
+  });
+})
+
+
 
 $('.regForm').on('submit', function (event) {
   event.preventDefault();
@@ -114,7 +128,6 @@ function loadTweets(){
     })
   }
 
-var users = {};
 
 
 

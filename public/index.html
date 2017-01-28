@@ -41,6 +41,9 @@
       <i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
       <button class="login-btn" type"button">Login</button>
       <button class="register-btn" type"button">register</button>
+      <form method="POST" class="logoutForm" action="/logout">
+      <button type="submit" value="Logout">Logout</button></form>
+
 
           <!-- login form popup -->
 <section class="login-form">
@@ -90,7 +93,6 @@
       <script>
       $(".login-btn").click(function(){
         $(".login-form").slideToggle("slow")
-        console.log("i worked");
       });
         </script>
 
@@ -129,9 +131,7 @@
   <footer>
     <span class="date"></span> -->
     <section class= "icons">
-      <i class="fa fa-retweet" aria-hidden="true"></i>
-      <i class="fa fa-heart" aria-hidden="true"></i>
-      <i class="fa fa-flag" aria-hidden="true"></i>
+
     </section>
   <!-- </footer>
 </article>
