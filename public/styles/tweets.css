@@ -71,18 +71,15 @@
 }
 
 .tweet h2 {
-display: inline-block;
+  display: inline-block;
   padding-left: 10px;
-font-size: 20px
+  font-size: 20px
 }
 
-.tweet body {
 
-}
-
-@media only screen and (min-device-width : 375px) and (max-device-width : 667px) {
+@media only screen and (min-device-width : 375px) and   (max-device-width : 667px) {
   .tweet {
   margin-left: 5px;
   margin-right: 5px;
-}
+  }
 }

@@ -116,8 +116,6 @@ $('.regForm').on('submit', function (event) {
 });
 })
 
-
-
 function loadTweets(){
     $.ajax({
       url: '/tweets/',
@@ -128,6 +126,20 @@ function loadTweets(){
     })
   }
 
+// toggle animation jquery
+
+$(".register-btn").click(function(){
+  $(".registration-form").slideToggle("slow")
+});
+
+  $(".login-btn").click(function(){
+    $(".login-form").slideToggle("slow")
+  });
+
+$(".compose").click(function(){
+  $(".new-tweet").hide().slideDown("slow")
+  $("textarea").focus();
+  })
 
 
 

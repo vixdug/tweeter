@@ -1,17 +1,17 @@
-#nav-bar {
+.nav-bar {
   background: #00a087;
   position: fixed;
   width: 100%;
   padding-right: 2em;
   padding-left: 2em;
   height: 80px;
-    top: 0;
-    left: 0;
-    right: 0;
-z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
 }
 
-#nav-bar .header {
+.nav-bar .header {
   vertical-align: middle;
   height: 140%;
   display: inline-block;
@@ -21,56 +21,63 @@ z-index: 1;
   font-family: 'Roboto Condensed', sans-serif;
 }
 
-#nav-bar img.logo {
+.nav-bar img.logo {
   width: 80px;
   filter: invert(100%);
 }
 
-#nav-bar button, .logout{
+.nav-bar button, .logout{
   background: white;
-    padding-bottom: 15px;
-    padding-left: 15px;
-    padding-top: 15px;
-    padding-right: 15px;
-    border-radius: 6px;
-    display: right;
-    display: flex;
-    float: right;
-    margin-top: 10px;
-    opacity: 0.75;
+  padding-bottom: 15px;
+  padding-left: 15px;
+  padding-top: 15px;
+  padding-right: 15px;
+  border-radius: 6px;
+  display: right;
+  display: flex;
+  float: right;
+  margin-top: 10px;
+  opacity: 0.75;
 }
+
 
 .logoutForm {
   display: inline;
 }
 
-#nav-bar button:hover {
+.nav-bar button:hover {
   opacity: 1.0;
 }
 
-#nav-bar i {
+.nav-bar i {
   padding-left: 10px;
   padding-top: 2px;
 }
 
+.login-form {
+  display: inherit;
+  text-align: right;
+  display: none;
+}
+
+.registration-form {
+  display: inherit;
+  text-align: right;
+  display: none;
+}
+
+
 @media only screen and (min-device-width : 375px) and (max-device-width : 667px) {
-  #nav-bar img.logo {
+  .nav-bar img.logo {
     width: 60px;
     padding-top: 15px;
   }
-  #nav-bar .header {
+  .nav-bar .header {
     padding-top: 5px;
+}
+  .nav-bar button {
+      padding-left: 11px;
+      padding-top: 11px;
+      padding-right: 11px;
   }
 }
-
-  .login-form {
-    display: inherit;
-    text-align: right;
-    display: none;
-  }
-
-  .registration-form {
-    display: inherit;
-    text-align: right;
-    display: none;
-  }

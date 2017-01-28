@@ -1,7 +1,4 @@
 
-
-
-
 .new-tweet {
 border-radius: 10px;
 background: #D3D3D3;
@@ -38,17 +35,17 @@ justify-content: flex-end;
 
 
 .new-tweet input {
-  	background-color:#f9f9f9;
-  	border-radius:6px;
-  	border:2px gray;
-  	cursor:pointer;
-  	color:#666666;
-  	font-family:Arial;
-  	font-size:15px;
-  	font-weight:bold;
-  	padding:6px 24px;
-  	text-decoration:none;
-  	text-shadow:0px 1px 0px #ffffff;
-    display: inherit;
+	background-color:#f9f9f9;
+	border-radius:6px;
+	border:2px gray;
+	cursor:pointer;
+	color:#666666;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+  display: inherit;
 
 }
