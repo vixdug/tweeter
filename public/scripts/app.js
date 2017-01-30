@@ -116,6 +116,7 @@ $('.regForm').on('submit', function (event) {
 });
 })
 
+
 function loadTweets(){
     $.ajax({
       url: '/tweets/',

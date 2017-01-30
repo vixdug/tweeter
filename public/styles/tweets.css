@@ -1,85 +1,112 @@
-.tweet {
-  background: white;
-  border-radius: 8px;
-  border: solid 1px;
-  margin-left: 35px;
-  margin-right: 35px;
-  margin-top: 30px;
-  opacity: 0.5;
+.tweet
+{
+    margin-top: 30px;
+    margin-right: 35px;
+    margin-left: 35px;
+
+    opacity: .5;
+    border: solid 1px;
+    border-radius: 8px;
+    background: white;
 }
 
-.tweet:hover i{
-  opacity: 1.0;
+.tweet:hover i
+{
+    opacity: 1.0;
 }
 
-.tweet:hover, i{
-  opacity: 1.0;
+.tweet:hover,
+i
+{
+    opacity: 1.0;
 }
 
-.tweet i {
-  color: teal;
-  float: right;
-  padding-right: 10px;
-  padding-top: 9px;
-  opacity: 0;
-}
+.tweet i
+{
+    float: right;
 
+    padding-top: 9px;
+    padding-right: 10px;
 
-
-.tweet header {
-  background: lightgrey;
-  border-radius: 5px;
-  height: 90px;
-  font-family: 'Roboto',sans-serif;
-  font-weight: 500;
-}
-
-
-.tweet img {
-  width: 80px;
-  border-radius: 9px;
-  padding-left: 7px;
-  padding-top: 7px;
-  float: left;
-}
-
-.tweet footer {
-  border-top: solid 1px;
-  height: 40px;
-}
-
-.tweet h3 {
-  float: right;
-  font-size: 90%;
-  font-family: 'Roboto',sans-serif;
-  font-weight: 400;
-  padding-right: 5px;
-}
-
-.tweet span.date {
-  font-size: 80%;
-  padding-left: 10px;
-  display: inline-block;
-  padding-top: 10px;
-}
-
-.tweet p {
-  padding-left: 15px;
-  padding-top: 15px;
-  padding-bottom: 5px;
-
-}
-
-.tweet h2 {
-  display: inline-block;
-  padding-left: 10px;
-  font-size: 20px
+    opacity: 0;
+    color: teal;
 }
 
 
-@media only screen and (min-device-width : 375px) and   (max-device-width : 667px) {
-  .tweet {
-  margin-left: 5px;
-  margin-right: 5px;
-  }
+
+.tweet header
+{
+    font-family: 'Roboto',sans-serif;
+    font-weight: 500;
+
+    height: 90px;
+
+    border-radius: 5px;
+    background: lightgrey;
+}
+
+
+.tweet img
+{
+    float: left;
+
+    width: 80px;
+    padding-top: 7px;
+    padding-left: 7px;
+
+    border-radius: 9px;
+}
+
+.tweet footer
+{
+    height: 40px;
+
+    border-top: solid 1px;
+}
+
+.tweet h3
+{
+    font-family: 'Roboto',sans-serif;
+    font-size: 90%;
+    font-weight: 400;
+
+    float: right;
+
+    padding-right: 5px;
+}
+
+.tweet span.date
+{
+    font-size: 80%;
+
+    display: inline-block;
+
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.tweet p
+{
+    padding-top: 15px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+}
+
+.tweet h2
+{
+    font-size: 20px;
+
+    display: inline-block;
+
+    padding-left: 10px;
+}
+
+
+@media only screen and (min-device-width : 375px) and   (max-device-width : 667px)
+{
+    .tweet
+    {
+        margin-right: 5px;
+        margin-left: 5px;
+    }
 }

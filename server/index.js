@@ -26,6 +26,10 @@ app.use(express.static("public"));
 app.use(cookieSession({
   keys: ['Lighthouse Labs'],
 }));
+app.use(function(req, res, next){
+  res.locals.user_id = req.session.username
+  next();
+});
 
 
 const DataHelpers = require("./lib/data-helpers.js")(db);
@@ -38,38 +42,6 @@ app.use("/tweets", tweetsRoutes);
 
 // email is taken function
 
-function emailIsTaken(email) {
-  let taken = false ;
-  for (let id in users) {
-    if (users[id].email == email) {
-      taken = true;
-    }
-  }
-return taken;
-}
-// empty array for users
-
-
-// function generateRandomString() {
-//  var result = Math.random().toString(36).substr(2, 6);
-//  return result;
-// }
-
-// authentication function
-// function authenticate(email, password) {
-//   for (let user_id in users) {
-//     let user = users[user_id];
-//     if (email === user.email) {
-//   if (bcrypt.compare(password === user.password)) {
-//     return user_id;
-// } else {
-//   return null;
-//    }
-//   }
-// }
-//   return null;
-// }
-//end of function
 
 
 //log in POST
@@ -79,16 +51,14 @@ let password = bcrypt.hashSync(req.body.password, 10);
 const searchUser = {
   "email": email
 }
-console.log(searchUser);
   DataHelpers.getUsers(searchUser,(err, email, id) => {
-    console.log(email);
-    console.log(id);
       if (err) {
         res.status(500).json({ error: err.message });
       } else {
           if (email === req.body['email']) {
           req.session.username = id;
           res.status(201).send();
+          displayUserData(email, id)
           res.end();
           console.log("user is logged in");
         } else {
@@ -99,14 +69,18 @@ console.log(searchUser);
   res.end();
 })
 
-
+module.exports = function displayUserData (email,id) {
+  console.log("outside of function", email);
+  console.log("outside of function",id);
+  return email;
+}
 
 //logout POST
 
 app.post("/logout", (req, res) => {
-req.session = null;
-res.end();
-console.log("logged out");
+  req.session = null;
+  res.end();
+  console.log("logged out");
 
 });
 

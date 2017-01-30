@@ -1,6 +1,5 @@
 "use strict";
 
-
 // Defines helper functions for saving and getting tweets, using the database `db`
 module.exports = function makeDataHelpers(db) {
   return {
@@ -14,7 +13,7 @@ module.exports = function makeDataHelpers(db) {
         callback(e)
       }
     },
-// save users to db
+// save users to db - work in progress from last STRETCH
     saveUser: function(user, callback) {
       try {
         db.collection("users").insertOne(user)
@@ -29,13 +28,13 @@ module.exports = function makeDataHelpers(db) {
       }
   },
 
-// get users from db // promise function to extract data
+// get users from db // promise function to extract data -work in progress from last STRETCH
     getUsers: function(user, callback) {
       try {
       db.collection("users").findOne(user)
       .then((result) => {
         if (result == null) {
-          console.log("null'n");
+          console.log("null");
         } else {
         console.log(result);
         callback(null, result.email, result._id)

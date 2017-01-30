@@ -1,79 +1,102 @@
-.nav-bar {
-  background: #00a087;
-  position: fixed;
-  width: 100%;
-  padding-right: 2em;
-  padding-left: 2em;
-  height: 80px;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1;
+.nav-bar
+{
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    left: 0;
+
+    width: 100%;
+    height: 80px;
+    padding-right: 2em;
+    padding-left: 2em;
+
+    background: #00a087;
 }
 
-.nav-bar .header {
-  vertical-align: middle;
-  height: 140%;
-  display: inline-block;
-  font-size: 200%;
-  margin-left: 10px;
-  color: white;
-  font-family: 'Roboto Condensed', sans-serif;
+.nav-bar .header
+{
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 200%;
+
+    display: inline-block;
+
+    height: 140%;
+    margin-left: 10px;
+
+    vertical-align: middle;
+
+    color: white;
 }
 
-.nav-bar img.logo {
-  width: 80px;
-  filter: invert(100%);
+.nav-bar img.logo
+{
+    width: 80px;
+
+    filter: invert(100%);
 }
 
-.nav-bar button, .logout{
-  background: white;
-  padding-bottom: 15px;
-  padding-left: 15px;
-  padding-top: 15px;
-  padding-right: 15px;
-  border-radius: 6px;
-  display: right;
-  display: flex;
-  float: right;
-  margin-top: 10px;
-  opacity: 0.75;
-}
+.nav-bar button,
+.logout
+{
+    display: right;
+    display: flex;
+    float: right;
 
-
-.logoutForm {
-  display: inline;
-}
-
-.nav-bar button:hover {
-  opacity: 1.0;
-}
-
-.nav-bar i {
-  padding-left: 10px;
-  padding-top: 2px;
-}
-
-.login-form {
-  display: inherit;
-  text-align: right;
-  display: none;
-}
-
-.registration-form {
-  display: inherit;
-  text-align: right;
-  display: none;
-}
-
-
-@media only screen and (min-device-width : 375px) and (max-device-width : 667px) {
-  .nav-bar img.logo {
-    width: 60px;
+    margin-top: 10px;
     padding-top: 15px;
-  }
-  .nav-bar .header {
-    padding-top: 5px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+
+    opacity: .75;
+    border-radius: 6px;
+    background: white;
 }
 
+
+.logoutForm
+{
+    display: inline;
+}
+
+.nav-bar button:hover
+{
+    opacity: 1.0;
+}
+
+.nav-bar i
+{
+    padding-top: 2px;
+    padding-left: 10px;
+}
+
+.login-form
+{
+    display: inherit;
+    display: none;
+
+    text-align: right;
+}
+
+.registration-form
+{
+    display: inherit;
+    display: none;
+
+    text-align: right;
+}
+
+
+@media only screen and (min-device-width : 375px) and (max-device-width : 667px)
+{
+    .nav-bar img.logo
+    {
+        width: 60px;
+        padding-top: 15px;
+    }
+    .nav-bar .header
+    {
+        padding-top: 5px;
+    }
 }
