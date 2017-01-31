@@ -59,18 +59,33 @@ function createTweetElement(tweet) {
   return $tweet;
 }
 
+function validateForm() {
+    var x = document.forms["tweet-form"]["text"].value;
+    if (x == "") {
+        alert("Tweet must be filled out");
+        return false;
+    }
+    if (x.length > 140) {
+      alert("Oh no you didn't. Tweet can only be 140 characters")
+      return false;
+    }
+}
+
+
   $('#tweet-form').on('submit', function (event) {
     event.preventDefault();
-    $.ajax ({
-      url: "/tweets/",
-      method: 'post',
-      data: $(this).serialize(),
-      success: function(result){
-      $('textarea').val('')
-      loadTweets()
-      $('.counter').text('140')
-      }
-    })
+    if ( validateForm() ) {
+      $.ajax ({
+        url: "/tweets/",
+        method: 'post',
+        data: $(this).serialize(),
+        success: function(result){
+        $('textarea').val('')
+        loadTweets()
+        $('.counter').text('140')
+        }
+      })
+    } 
   });
 
 
